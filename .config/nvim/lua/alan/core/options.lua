@@ -43,8 +43,8 @@ opt.clipboard = "unnamedplus" -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
--- turn off swapfile
-opt.swapfile = false
+opt.swapfile = false -- turn off swapfile
+opt.backup = false -- turn off backup file
 
 -- gets rid of line with white spaces
 vim.g.editorconfig = true

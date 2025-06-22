@@ -18,8 +18,8 @@ return {
 				style = "night",
 				transparent = transparent,
 				styles = {
-					sidebar = transparent and "transparent" or "dark",
-					floats = "dark",
+					sidebars = transparent and "transparent" or "dark",
+					floats = transparent and "transparent" or "dark",
 				},
 				on_colors = function(colors)
 					colors.bg = bg
