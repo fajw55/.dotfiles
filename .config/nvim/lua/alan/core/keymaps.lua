@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 local keymap = vim.keymap -- for conciseness
 
 -- General Keymaps --
-vim.keymap.set("i", "<C-c>", "<ESC>", { desc = "Exit insert mode with jk" })
+vim.keymap.set("i", "<C-c>", "<ESC>", { desc = "Exit insert mode with ctrl+c" })
 vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlights" })
 -- vim.keymap.set("i", "<Esc>", "<nop>") -- unmap Esc in insert mode
 

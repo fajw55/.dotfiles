@@ -127,7 +127,7 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>lg",
+			"<leader>gg",
 			function()
 				require("snacks").lazygit()
 			end,
@@ -141,19 +141,19 @@ return {
 			desc = "Lazygit Logs",
 		},
 		{
-			"<leader>rN",
+			"<leader>fr",
 			function()
 				require("snacks").rename.rename_file()
 			end,
 			desc = "Fast Rename Current File",
 		},
-		{
-			"<leader>dB",
-			function()
-				require("snacks").bufdelete()
-			end,
-			desc = "Delete or Close Buffer  (Confirm)",
-		},
+		-- {
+		-- 	"<leader>dB",
+		-- 	function()
+		-- 		require("snacks").bufdelete()
+		-- 	end,
+		-- 	desc = "Delete or Close Buffer  (Confirm)",
+		-- },
 
 		-- Snacks Picker
 		{
