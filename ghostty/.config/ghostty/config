@@ -17,7 +17,7 @@ shell-integration = zsh
 
 # font
 font-family = "MesloLGS NF"
-font-size = 14
+font-size = 12
 
 # cursor
 cursor-style = block
@@ -30,12 +30,14 @@ background-opacity = 0.85
 background-blur = true
 confirm-close-surface = false
 gtk-toolbar-style = flat
-window-height = 30
-window-width = 100
+resize-overlay = never
 
-# resize-overlay = never
 # window-decoration = auto
 # window-padding-x = 4
 # window-padding-y = 4
 # window-padding-balance = true
 # window-padding-color = extend-always
+
+# window size when tiling is not used
+# window-height = 30
+# window-width = 100
