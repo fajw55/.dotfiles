@@ -4,7 +4,7 @@
 
 vim.o.scroll = 5 -- for neoscroll
 
-vim.g.clipboard = "wl-copy"
+vim.g.clipboard = "osc52"
 
 vim.g.conform_format_on_save = { -- optional, override behavior
   lsp_fallback = false,
