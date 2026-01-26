@@ -5,6 +5,17 @@
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x')
 
+-- vim.opt.clipboard = "unnamedplus"
+
+-- Yank to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y')
+
+-- Paste from system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>P", '"+P')
+
+-- organize imports
 vim.keymap.set("n", "<leader>cu", function()
   vim.lsp.buf.code_action({
     apply = true,
