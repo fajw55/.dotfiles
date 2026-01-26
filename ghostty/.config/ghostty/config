@@ -10,9 +10,6 @@
 #
 # RELOAD: ctrl+shift+,
 
-# force zsh
-# command = /bin/zsh -l -i
-
 shell-integration = zsh
 
 # font
@@ -26,13 +23,14 @@ shell-integration-features = no-cursor
 
 # window
 theme = light:TokyoNight Day,dark:TokyoNight Night
-background-opacity = 0.90
+background-opacity = 0.85
 background-blur = true
 confirm-close-surface = false
 gtk-toolbar-style = flat
 resize-overlay = never
 window-padding-x = 4
 window-padding-y = 4
+window-decoration = server
 
 # SSH session terminfo
 shell-integration-features = ssh-env
@@ -40,10 +38,11 @@ shell-integration-features = ssh-env
 # slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
 
-# window-padding-balance = true
-# window-padding-color = extend-always
-# window-decoration = auto
+# keyboard bindings
+# for list run `ghostty +list-keybinds --default`
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+keybind = control+shift+s=close_surface
 
-# window size when tiling is not used
-# window-height = 30
-# window-width = 100
