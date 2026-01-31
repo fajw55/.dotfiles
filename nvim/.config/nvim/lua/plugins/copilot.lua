@@ -1,3 +1,8 @@
+-- using opencode so disabled
+if true then
+  return {}
+end
+
 return {
   -- NOTE: copilot (zbirenbaum)
   {
