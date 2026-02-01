@@ -18,3 +18,5 @@
 	sort = -committerdate
 [includeIf "gitdir:~/Projects/"]
   path = ~/.gitconfig-ori
+[credential "https://github.com"]
+	username = fajw55
