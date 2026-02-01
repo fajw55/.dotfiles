@@ -1,2 +1,0 @@
--- temp disabled
-return {}
