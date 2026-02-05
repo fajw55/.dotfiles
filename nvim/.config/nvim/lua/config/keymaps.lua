@@ -9,14 +9,17 @@ vim.keymap.set("n", "x", '"_x')
 
 -- Yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-vim.keymap.set("n", "<leader>Y", '"+Y')
+-- vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- Paste from system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>P", '"+P')
+-- vim.keymap.set({ "n", "v" }, "<leader>P", '"+P')
 
 -- Show diagnostics in a floating window
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+
+-- jk exits insert mode
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- organize imports
 -- vim.keymap.set("n", "<leader>cu", function()
