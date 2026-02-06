@@ -35,7 +35,7 @@ window-decoration = server
 # SSH session terminfo
 shell-integration-features = ssh-env
 
-# slowdown mouse scrolling
+# mouse stuff
 mouse-scroll-multiplier = 0.95
 
 # keyboard bindings
