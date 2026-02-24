@@ -19,8 +19,8 @@ vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system cli
 vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "Paste before cursor from system" })
 
 -- put
-vim.keymap.set("n", "<leader>u", ":put<CR>", { desc = "Put internal register below" })
-vim.keymap.set("n", "<leader>U", ":put!<CR>", { desc = "Put internal register above" })
+vim.keymap.set("n", "<leader>ä", ":put<CR>", { desc = "Put internal register below" })
+vim.keymap.set("n", "<leader>Ä", ":put!<CR>", { desc = "Put internal register above" })
 
 -- disable mid mouse button
 vim.keymap.set({ "n", "i", "v", "c" }, "<MiddleMouse>", "<Ignore>")
