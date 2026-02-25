@@ -3,11 +3,11 @@
 -- Add any additional keymaps here
 
 -- delete single character without copying into register
-vim.keymap.set("n", "x", '"_x')
-vim.keymap.set("n", "X", '"_X')
-vim.keymap.set("n", "<Del>", '"_x')
+vim.keymap.set({ "n", "v" }, "x", '"_x')
+vim.keymap.set({ "n", "v" }, "X", '"_X')
+vim.keymap.set({ "n", "v" }, "<Del>", '"_x')
 
--- radera rad ... delete line without copy
+-- delete line without copy
 vim.keymap.set("n", "åå", '"_dd')
 
 -- Yank to system clipboard
