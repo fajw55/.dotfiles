@@ -1,8 +1,3 @@
--- I am not using it
-if true then
-  return {}
-end
-
 return {
   "folke/flash.nvim",
   event = "VeryLazy",

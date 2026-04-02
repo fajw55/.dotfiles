@@ -36,7 +36,7 @@ window-decoration = server
 shell-integration-features = ssh-env
 
 # mouse stuff
-mouse-scroll-multiplier = 0.95
+# mouse-scroll-multiplier = 0.95
 
 # keyboard bindings
 # for list run `ghostty +list-keybinds --default`
