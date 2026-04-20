@@ -5,7 +5,15 @@
 -- vim.opt.scrolloff = 0 -- allow scrolloff
 vim.o.scroll = 5 -- for neoscroll
 
--- vim.g.conform_format_on_save = { -- optional, override behavior
---   lsp_fallback = false,
---   timeout_ms = 500,
--- }
+vim.g.conform_format_on_save = { -- optional, override behavior
+  lsp_fallback = false,
+  timeout_ms = 500,
+}
+
+-- Hightlight yanking
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
