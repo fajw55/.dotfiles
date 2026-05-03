@@ -7,16 +7,16 @@
 [pull]
 	ff = only
 [maintenance]
-	repo = /home/alanj/Projects/checkout-tools
-  repo = /home/alanj/Projects/appshell-checkout
-	repo = /home/alanj/Projects/ori-ui
+	repo = /home/alanj/Work/checkout-tools
+  repo = /home/alanj/Work/appshell-checkout
+	repo = /home/alanj/Work/ori-ui
 [rerere]
 	enabled = true
 [column]
 	ui = auto
 [branch]
 	sort = -committerdate
-[includeIf "gitdir:~/Projects/"]
+[includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-ori
 [credential "https://github.com"]
 	username = fajw55
