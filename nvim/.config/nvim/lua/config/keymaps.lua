@@ -14,9 +14,8 @@ vim.keymap.set("n", "åå", '"_dd')
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank entire line to system" })
 
--- Paste from system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "Paste before cursor from system" })
+-- paste over selection without loosing yanked
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- put
 vim.keymap.set("n", "<leader>ä", ":put<CR>", { desc = "Put internal register below" })
@@ -32,3 +31,10 @@ vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Line Diagnostics"
 
 -- jk exits insert mode
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+
+-- Copy filepath to the clipboard
+vim.keymap.set("n", "<leader>fp", function()
+  local filePath = vim.fn.expand("%:~") -- Gets the file path relative to the home directory
+  vim.fn.setreg("+", filePath) -- Copy the file path to the clipboard register
+  print("File path copied to clipboard: " .. filePath)
+end, { desc = "Copy file path to clipboard" })
