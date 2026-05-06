@@ -1,3 +1,7 @@
 [user]
 	email = alan.jug@oriflame.com
+[maintenance]
+	repo = /home/alanj/Work/checkout-tools
+  repo = /home/alanj/Work/appshell-checkout
+	repo = /home/alanj/Work/ori-ui
 
