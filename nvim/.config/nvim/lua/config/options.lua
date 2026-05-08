@@ -17,3 +17,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- Native inline completions don't support being shown as regular completions
+-- vim.g.ai_cmp = false
