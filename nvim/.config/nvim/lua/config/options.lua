@@ -5,18 +5,18 @@
 -- vim.opt.scrolloff = 0 -- allow scrolloff
 vim.o.scroll = 5 -- for neoscroll
 
-vim.g.conform_format_on_save = { -- optional, override behavior
-  lsp_fallback = false,
-  timeout_ms = 500,
-}
+vim.opt.termguicolors = true
 
--- Hightlight yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
+vim.opt.number = true -- line number
+vim.opt.relativenumber = true -- relative line numbers
+vim.opt.cursorline = true -- highlight current line
+vim.opt.wrap = false -- do not wrap lines by default
+vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
+vim.opt.sidescrolloff = 10 -- keep 10 lines to left/right of cursor
+
+vim.opt.backspace = "indent,eol,start" -- better backspace behaviour
+vim.opt.iskeyword:append("-") -- include - in words
+vim.opt.selection = "inclusive" -- include last char in selection
 
 -- Native inline completions don't support being shown as regular completions
 -- vim.g.ai_cmp = false
