@@ -16,3 +16,5 @@
   path = ~/.gitconfig-ori
 [credential "https://github.com"]
 	username = fajw55
+[coderabbit]
+	machineId = cli/381df27358d1448ba409a87f7227d021

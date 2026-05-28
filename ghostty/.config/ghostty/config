@@ -31,6 +31,7 @@ macos-titlebar-style = hidden
 gtk-toolbar-style = flat
 resize-overlay = never
 split-preserve-zoom = navigation
+split-divider-color = #BA7652
 
 background-opacity = 0.95
 background-blur = macos-glass-clear
