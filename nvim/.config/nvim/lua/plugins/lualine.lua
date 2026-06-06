@@ -1,6 +1,19 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  opts = function(_, opts)
+    if LazyVim.has_extra("ai.sidekick") then
+      return
+    end
+    table.insert(
+      opts.sections.lualine_x,
+      2,
+      LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
+        local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
+        return #clients > 0 and status[clients[1].id] or nil
+      end)
+    )
+  end,
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
