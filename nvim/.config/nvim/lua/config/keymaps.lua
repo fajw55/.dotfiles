@@ -19,8 +19,8 @@ vim.keymap.set({ "n", "v" }, "<Del>", '"_x')
 vim.keymap.set("n", "åå", '"_dd')
 
 -- Yank to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank entire line to system" })
+-- vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+-- vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank entire line to system" })
 
 -- paste over selection without loosing yanked
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -56,3 +56,9 @@ vim.keymap.set("n", "<leader>fp", function()
   vim.fn.setreg("+", filePath) -- Copy the file path to the clipboard register
   print("File path copied to clipboard: " .. filePath)
 end, { desc = "Copy file path to clipboard" })
+
+-- LSP restartt
+vim.keymap.set("n", "<leader>lr", function()
+  vim.cmd("lsp restart")
+  vim.notify("LSP restarted", vim.log.levels.INFO)
+end, { desc = "Restart LSP" })

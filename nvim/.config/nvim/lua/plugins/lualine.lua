@@ -1,19 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = function(_, opts)
-    if LazyVim.has_extra("ai.sidekick") then
-      return
-    end
-    table.insert(
-      opts.sections.lualine_x,
-      2,
-      LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
-        local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
-        return #clients > 0 and status[clients[1].id] or nil
-      end)
-    )
-  end,
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
@@ -42,26 +29,67 @@ return {
 
     local branch = { "branch", icon = { "" }, "|" }
 
+    local mcphubStatus = {
+      function()
+        -- Check if MCPHub is loaded
+        if not vim.g.loaded_mcphub then
+          return "󰐻 -"
+        end
+
+        local count = vim.g.mcphub_servers_count or 0
+        local status = vim.g.mcphub_status or "stopped"
+        local executing = vim.g.mcphub_executing
+
+        -- Show "-" when stopped
+        if status == "stopped" then
+          return "󰐻 -"
+        end
+
+        -- Show spinner when executing, starting, or restarting
+        if executing or status == "starting" or status == "restarting" then
+          local frames = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+          local frame = math.floor(vim.loop.now() / 100) % #frames + 1
+          return "󰐻 " .. frames[frame]
+        end
+
+        return "󰐻 " .. count
+      end,
+      color = function()
+        if not vim.g.loaded_mcphub then
+          return { fg = "#A79A83" } -- Gray for not loaded
+        end
+
+        local status = vim.g.mcphub_status or "stopped"
+        if status == "ready" or status == "restarted" then
+          return { fg = "#50fa7b" } -- Green for connected
+        elseif status == "starting" or status == "restarting" then
+          return { fg = "#ffb86c" } -- Orange for connecting
+        else
+          return { fg = "#ff5555" } -- Red for error/stopped
+        end
+      end,
+    }
+
     -- configure lualine with modified theme
     lualine.setup({
       icons_enabled = true,
       options = {
-        theme = "gruvbox",
+        theme = "ayu_mirage", -- "gruvbox",
         -- component_separators = { left = "|", right = "|" },
         -- section_separators = { left = "|", right = "" },
       },
       sections = {
         lualine_a = { mode },
-        lualine_b = { branch },
-        lualine_c = { diff, filename },
+        lualine_b = { branch, diff },
+        lualine_c = { filename, "diagnostics" },
         lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
           },
-          -- { "encoding" },
-          -- { "fileformat" },
           { "filetype" },
+          { "lsp_status" },
+          mcphubStatus,
         },
       },
     })
