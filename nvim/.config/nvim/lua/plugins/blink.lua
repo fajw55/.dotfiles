@@ -33,15 +33,6 @@ return {
     },
     sources = {
       default = { "lsp", "path", "buffer", "snippets" },
-      providers = {
-        -- snippets = { opts = { friendly_snippets = false } },
-        path = {
-          -- Path sources triggered by "/" interfere with CopilotChat commands
-          enabled = function()
-            return vim.bo.filetype ~= "copilot-chat"
-          end,
-        },
-      },
     },
     fuzzy = {
       implementation = "prefer_rust",
