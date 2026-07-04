@@ -11,26 +11,32 @@
 # RELOAD: ctrl+shift+,
 
 shell-integration = zsh
+shell-integration-features = ssh-env, no-cursor
 
 # font
 font-family = "MesloLGS NF"
-font-size = 12
+font-size = 13
 
 # cursor
 cursor-style = "block"
-cursor-invert-fg-bg = true
-shell-integration-features = no-cursor
+# cursor-invert-fg-bg = true
 
 # window
 theme = light:TokyoNight Day,dark:TokyoNight Night
-background-opacity = 0.85
-background-blur = true
-confirm-close-surface = false
-gtk-toolbar-style = flat
-resize-overlay = never
+
 window-padding-x = 4
 window-padding-y = 4
 window-decoration = server
+window-save-state = always
+gtk-toolbar-style = flat
+resize-overlay = never
+split-preserve-zoom = navigation
+split-divider-color = #BA7652
+
+background-opacity = 0.85
+background-blur = true
+
+confirm-close-surface = false
 
 # SSH session terminfo
 shell-integration-features = ssh-env
