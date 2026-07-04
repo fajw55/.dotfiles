@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
+    "saghen/blink.cmp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
@@ -78,9 +78,16 @@ return {
       },
     })
 
+    -- toggle for virtual text
+    vim.keymap.set("n", "<leader>lx", function()
+      local current = vim.diagnostic.config().virtual_text
+      vim.diagnostic.config({ virtual_text = not current })
+    end, { desc = "Toggle LSP virtual text" })
+
     -- NOTE: Setup servers
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- blink cmp
+    capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
     -- Global LSP settings (applied to all servers)
     vim.lsp.config("*", {
@@ -115,7 +122,6 @@ return {
         "html",
         "javascript",
         "javascriptreact",
-        "less",
         "typescriptreact",
       },
       init_options = {
@@ -138,9 +144,6 @@ return {
         "typescriptreact",
         "javascriptreact",
         "css",
-        "sass",
-        "scss",
-        "less",
         "svelte",
       },
     })
@@ -221,24 +224,24 @@ return {
     })
 
     -- tailwind
-    vim.lsp.config("tailwindcss", {
-      filetypes = {
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "javascriptreact",
-        "typescriptreact",
-        "svelte",
-        "vue",
-        "astro",
-      },
-      init_options = {
-        userLanguages = {
-          astro = "html",
-        },
-      },
-    })
+    -- vim.lsp.config("tailwindcss", {
+    --   filetypes = {
+    --     "html",
+    --     "css",
+    --     "javascript",
+    --     "typescript",
+    --     "javascriptreact",
+    --     "typescriptreact",
+    --     "svelte",
+    --     "vue",
+    --     "astro",
+    --   },
+    --   init_options = {
+    --     userLanguages = {
+    --       astro = "html",
+    --     },
+    --   },
+    -- })
 
     -- Instead of using mason enable all configured LSP via `automatic_enable=true`
     -- Prefer more control by enable manual server call below via vim.lsp.enable("")
@@ -250,7 +253,6 @@ return {
       "emmet_ls",
       "ts_ls",
       "gopls",
-      "tailwindcss",
       "marksman",
     })
   end,

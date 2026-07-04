@@ -2,6 +2,14 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- better movement in wrapped text
+vim.keymap.set("n", "j", function()
+  return vim.v.count == 0 and "gj" or "j"
+end, { expr = true, silent = true, desc = "Down (wrap-aware)" })
+vim.keymap.set("n", "k", function()
+  return vim.v.count == 0 and "gk" or "k"
+end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
+
 -- delete single character without copying into register
 vim.keymap.set({ "n", "v" }, "x", '"_x')
 vim.keymap.set({ "n", "v" }, "X", '"_X')
@@ -29,8 +37,18 @@ vim.keymap.set({ "n", "i", "v", "c" }, "<3-MiddleMouse>", "<Ignore>")
 -- Show diagnostics in a floating window
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
--- jk exits insert mode
-vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+-- toggle diagnostics
+vim.keymap.set("n", "<leader>xd", function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle diagnostics" })
+
+vim.keymap.set("n", "<CS-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<CS-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<CS-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<CS-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- Copy filepath to the clipboard
 vim.keymap.set("n", "<leader>fp", function()
@@ -38,3 +56,9 @@ vim.keymap.set("n", "<leader>fp", function()
   vim.fn.setreg("+", filePath) -- Copy the file path to the clipboard register
   print("File path copied to clipboard: " .. filePath)
 end, { desc = "Copy file path to clipboard" })
+
+-- LSP restartt
+vim.keymap.set("n", "<leader>lr", function()
+  vim.cmd("lsp restart")
+  vim.notify("LSP restarted", vim.log.levels.INFO)
+end, { desc = "Restart LSP" })
