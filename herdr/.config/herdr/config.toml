@@ -1,0 +1,93 @@
+# herdr configuration
+# Place this file at ~/.config/herdr/config.toml
+
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[keys]
+prefix = "ctrl+a"
+# detach = "prefix+q"
+# workspace_picker = "prefix+w"
+# goto = "prefix+g"
+# new_workspace = "prefix+shift+n"
+# new_worktree = "prefix+shift+g"
+# rename_workspace = "prefix+shift+w"
+# close_workspace = "prefix+shift+d"
+# navigate_workspace_up = "up"
+# navigate_workspace_down = "down"
+# navigate_pane_left = "h"
+# navigate_pane_down = "j"
+# navigate_pane_up = "k"
+# navigate_pane_right = "l"
+# remote_image_paste = "ctrl+v"
+# new_tab = "prefix+c"
+# previous_tab = "prefix+p"
+# next_tab = "prefix+n"
+# switch_tab = "prefix+1..9"
+# rename_tab = "prefix+shift+t"
+# close_tab = "prefix+shift+x"
+# copy_mode = "prefix+["
+# focus_pane_left = "prefix+h"
+# focus_pane_down = "prefix+j"
+# focus_pane_up = "prefix+k"
+# focus_pane_right = "prefix+l"
+# swap_pane_left = "prefix+shift+h"
+# swap_pane_down = "prefix+shift+j"
+# swap_pane_up = "prefix+shift+k"
+# swap_pane_right = "prefix+shift+l"
+# cycle_pane_next = "prefix+tab"
+# cycle_pane_previous = "prefix+shift+tab"
+# last_pane = ""
+# split_vertical = "prefix+v"
+split_vertical = "prefix+|"
+# split_horizontal = "prefix+minus"
+# close_pane = "prefix+x"
+# zoom = "prefix+z"
+zoom = "prefix+m"
+# resize_mode = "prefix+r"
+# toggle_sidebar = "prefix+b"
+
+# Custom commands use the same binding syntax.
+# [[keys.command]]
+# key = "prefix+alt+o"
+# type = "pane"
+# command = "~/scripts/fzf_listoldfiles.sh"
+# description = "List old files via fzf"
+
+# [[keys.command]]
+# key = "prefix+t"
+# type = "pane"
+# command = "~/scripts/zoxide_openfiles_nvim.sh"
+# description = "Find files and open into vim"
+
+## Plugin Herdr Plus - Quick Actions
+[[keys.command]]
+key = "prefix+y"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.quick-actions"
+description = "herdr-plus: quick actions"
+
+## Plugin Herdr Plus - Projects Dir
+[[keys.command]]
+key = "prefix+O"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.projects"
+description = "herdr-plus: projects"
+
+[ui.sound]
+enabled = false
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+# Ask for a tab name before creating a new tab.
+# Set false to create tabs immediately with generated names.
+prompt_new_tab_name = false
+
+[session]
+# Resume supported AI-agent panes into their native conversation sessions after
+# a Herdr server restart. Requires official integrations that report session refs.
+resume_agents_on_restore = true
