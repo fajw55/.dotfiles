@@ -75,7 +75,7 @@ description = "herdr-plus: quick actions"
 
 ## Plugin Herdr Plus - Projects Dir
 [[keys.command]]
-key = "prefix+O"
+key = "prefix+o"
 type = "plugin_action"
 command = "cloudmanic.herdr-plus.projects"
 description = "herdr-plus: projects"
@@ -86,9 +86,19 @@ enabled = false
 [ui]
 show_agent_labels_on_pane_borders = true
 
-# Ask for a tab name before creating a new tab.
-# Set false to create tabs immediately with generated names.
-prompt_new_tab_name = false
+[ui.sidebar.agents]
+row_gap = 1
+rows = [
+  ["state_icon", "workspace", "tab"],
+  ["agent"],
+]
+
+[ui.sidebar.spaces]
+row_gap = 1
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+]
 
 [session]
 # Resume supported AI-agent panes into their native conversation sessions after

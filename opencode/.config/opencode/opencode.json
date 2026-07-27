@@ -13,6 +13,11 @@
       "type": "local",
       "command": ["npx", "-y", "@azure-devops/mcp", "oriflame"],
       "enabled": true
+    },
+    "mui-mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "@mui/mcp@latest"],
+      "enabled": true
     }
   }
 }
