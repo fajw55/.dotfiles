@@ -20,3 +20,5 @@
   path = ~/.gitconfig-ori
 [credential "https://github.com"]
 	username = fajw55
+[init]
+	defaultBranch = main
