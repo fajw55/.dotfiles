@@ -6,17 +6,38 @@
   "mcp": {
     "quay": {
       "type": "local",
-      "command": ["quay", "mcp"],
+      "command": [
+        "quay",
+        "mcp"
+      ],
       "enabled": true
     },
     "azure-devops": {
       "type": "local",
-      "command": ["npx", "-y", "@azure-devops/mcp", "oriflame"],
+      "command": [
+        "npx",
+        "-y",
+        "@azure-devops/mcp",
+        "oriflame"
+      ],
       "enabled": true
     },
     "mui-mcp": {
       "type": "local",
-      "command": ["npx", "-y", "@mui/mcp@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "@mui/mcp@latest"
+      ],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
       "enabled": true
     }
   }
