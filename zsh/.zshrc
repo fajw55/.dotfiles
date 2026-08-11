@@ -144,9 +144,5 @@ pn typecheck && \
 pn test\
 '
 
-alias deepclean='\
-pn run clean && \
-pn run uninstall && \
-pn dedupe && \
-pn i\
-'
+alias dsclean='find . -type f -name ".DS_Store" -delete'
+

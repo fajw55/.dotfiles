@@ -40,5 +40,13 @@
       ],
       "enabled": true
     }
+    // "wiki-kb": {
+    //   "type": "remote",
+    //   "url": "https://srch-wikikbsync.search.windows.net/knowledgebases/knowledgebase-srch-wikikbsync/mcp?api-version=2026-05-01-preview",
+    //   "enabled": true,
+    //   "headers": {
+    //     "api-key": "{key}"
+    //   }
+    // }
   }
 }
