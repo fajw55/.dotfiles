@@ -116,6 +116,9 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 autoload bashcompinit && bashcompinit
 source $(brew --prefix)/etc/bash_completion.d/az
 
+# --- The Fuck ---
+eval $(thefuck --alias)
+
 # --- Backups ---
 alias backup="$HOME/.local/bin/backup.sh"
 

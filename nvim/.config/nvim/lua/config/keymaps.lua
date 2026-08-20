@@ -50,6 +50,16 @@ vim.keymap.set("v", "<CS-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" }
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
+-- Accept Copilot suggestion
+vim.keymap.set("i", "<C-Enter>", function()
+  vim.lsp.inline_completion.get()
+end, { desc = "Accept Copilot suggestion" })
+
+-- Goto/Apply Sidekick Next Edit
+vim.keymap.set({ "n", "i" }, "<C-S-CR>", function()
+  require("sidekick").nes_jump_or_apply()
+end, { desc = "Goto/Apply Sidekick Next Edit" })
+
 -- Copy filepath to the clipboard
 vim.keymap.set("n", "<leader>fp", function()
   local filePath = vim.fn.expand("%:~") -- Gets the file path relative to the home directory

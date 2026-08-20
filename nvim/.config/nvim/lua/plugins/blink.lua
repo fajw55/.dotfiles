@@ -45,5 +45,27 @@ return {
     snippets = {
       preset = "luasnip",
     },
+    keymap = {
+      -- Tab is always a real Tab
+      ["<Tab>"] = { "fallback" },
+
+      ["<C-Space>"] = {
+        function(cmp)
+          if cmp.is_visible() then
+            return cmp.hide()
+          end
+          return cmp.show()
+        end,
+      },
+
+      -- Arrows only move the cursor
+      -- ["<Up>"] = false,
+      -- ["<Down>"] = false,
+      -- ["<Left>"] = false,
+      -- ["<Right>"] = false,
+      --
+      -- ["<C-S-Up>"] = { "select_prev", "fallback" },
+      -- ["<C-S-Down>"] = { "select_next", "fallback" },
+    },
   },
 }
