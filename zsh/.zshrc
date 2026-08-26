@@ -149,3 +149,6 @@ pn test\
 
 alias dsclean='find . -type f -name ".DS_Store" -delete'
 
+
+# Added by Devin
+export PATH="/Users/AlanJ/.codeium/windsurf/bin:$PATH"
