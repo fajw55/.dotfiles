@@ -52,3 +52,5 @@ keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 keybind = control+shift+s=close_surface
 
+# keybind = super+c=copy_to_clipboard
+# keybind = super+v=paste_from_clipboard
