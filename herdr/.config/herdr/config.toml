@@ -95,6 +95,13 @@ rows = [
   ["agent", "$dvu_quota"],
 ]
 
+[ui.sidebar.agents.rows_by_agent]
+codex = [
+  ["state_icon", "workspace", "tab"],
+  ["$codex_model", "$codex_effort"],
+  ["$codex_short_limit", "$codex_long_limit"],
+]
+
 [ui.sidebar.spaces]
 row_gap = 1
 rows = [
