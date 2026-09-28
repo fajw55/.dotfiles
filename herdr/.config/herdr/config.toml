@@ -97,9 +97,14 @@ rows = [
 
 [ui.sidebar.agents.rows_by_agent]
 codex = [
-  ["state_icon", "workspace", "tab"],
+  ["state_icon", "workspace", "tab", "agent"],
   ["$codex_model", "$codex_effort"],
   ["$codex_short_limit", "$codex_long_limit"],
+]
+devin = [
+  ["state_icon", "workspace", "tab", "agent"],
+  ["$devin_model", "$devin_effort"],
+  ["$devin_daily_limit", "$devin_weekly_limit"],
 ]
 
 [ui.sidebar.spaces]
