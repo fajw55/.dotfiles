@@ -116,8 +116,26 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 autoload bashcompinit && bashcompinit
 source $(brew --prefix)/etc/bash_completion.d/az
 
+# --- Devin ---
+export PATH="/Users/AlanJ/.codeium/windsurf/bin:$PATH"
+
 # --- The Fuck ---
 eval $(thefuck --alias)
+
+# --- Codex - add write permission for vaults ---
+codex() {
+  case "$PWD" in
+    "$HOME/Work/"*)
+      command codex --add-dir "$HOME/Work/oriflame-vault" "$@"
+      ;;
+    "$HOME/Projects/"*)
+      command codex --add-dir "$HOME/Projects/alan-vault" "$@"
+      ;;
+    *)
+      command codex "$@"
+      ;;
+  esac
+}
 
 # --- Backups ---
 alias backup="$HOME/.local/bin/backup.sh"
@@ -149,6 +167,3 @@ pn test\
 
 alias dsclean='find . -type f -name ".DS_Store" -delete'
 
-
-# Added by Devin
-export PATH="/Users/AlanJ/.codeium/windsurf/bin:$PATH"
