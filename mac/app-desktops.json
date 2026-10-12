@@ -1,0 +1,15 @@
+{
+  "display": "Main",
+  "apps": {
+    "com.mitchellh.ghostty": 1,
+    "com.exafunction.windsurf": 2,
+    "com.microsoft.vscode": 2,
+    "com.openai.codex": 3,
+    "com.microsoft.edgemac": 4,
+    "md.obsidian": 5,
+    "com.apple.safari": 6,
+    "com.microsoft.outlook": 7,
+    "app.zen-browser.zen": 8,
+    "com.microsoft.teams2": 9
+  }
+}

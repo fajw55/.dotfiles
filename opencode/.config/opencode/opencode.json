@@ -39,7 +39,27 @@
         "-y",
         "@playwright/mcp@latest"
       ],
-      "enabled": true
+      "enabled": true,
+      "environment": {
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN": "tn499Yh5tzGoFI_iNvgS8poxphV6ajrTS-FmvtpTzRk"
+      }
+    },
+    "edge": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--extension",
+        "--browser",
+        "msedge",
+        "--profile-dir-name",
+        "Default"
+      ],
+      "enabled": true,
+      "environment": {
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN": "tn499Yh5tzGoFI_iNvgS8poxphV6ajrTS-FmvtpTzRk"
+      }
     }
     // "wiki-kb": {
     //   "type": "remote",

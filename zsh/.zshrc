@@ -112,15 +112,35 @@ export BAT_THEME="Catppuccin Macchiato"
 export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
 export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
+
 # --- Azure CLI ---
-autoload bashcompinit && bashcompinit
-source $(brew --prefix)/etc/bash_completion.d/az
+# autoload bashcompinit && bashcompinit
+# source $(brew --prefix)/etc/bash_completion.d/az
+
+if command -v brew &> /dev/null; then
+  azure_completion="$(brew --prefix)/etc/bash_completion.d/az"
+  if [[ -r "$azure_completion" ]]; then
+    autoload -Uz bashcompinit
+    bashcompinit
+    source "$azure_completion"
+  fi
+  unset azure_completion
+fi
 
 # --- Devin ---
-export PATH="/Users/AlanJ/.codeium/windsurf/bin:$PATH"
+# export PATH="/Users/AlanJ/.codeium/windsurf/bin:$PATH"
+if [[ -d "$HOME/.codeium/windsurf/bin" ]]; then
+  case ":$PATH:" in
+    *":$HOME/.codeium/windsurf/bin:"*) ;;
+    *) export PATH="$HOME/.codeium/windsurf/bin:$PATH" ;;
+  esac
+fi
 
 # --- The Fuck ---
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
+if command -v thefuck &> /dev/null; then
+  eval "$(thefuck --alias)"
+fi
 
 # --- Codex - add write permission for vaults ---
 codex() {
@@ -139,6 +159,9 @@ codex() {
 
 # --- Backups ---
 alias backup="$HOME/.local/bin/backup.sh"
+
+# --- heal macOS v27 issues ---
+alias heal="$HOME/.local/bin/heal.sh"
 
 # --- GLOBAl ALIASES ---
 alias reloadz="source ~/.zshrc"
@@ -160,8 +183,9 @@ alias cr="coderabbit"
 
 alias lazyalan='\
 pn build && \
-pn lint && \
 pn typecheck && \
+pn format && \
+pn lint && \
 pn test\
 '
 
