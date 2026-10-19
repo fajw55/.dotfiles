@@ -104,7 +104,7 @@ codex = [
 devin = [
   ["state_icon", "workspace", "tab", "agent"],
   ["$devin_model", "$devin_effort"],
-  ["$devin_daily_limit", "$devin_weekly_limit"],
+  ["$devin_acu_remaining", "$devin_daily_limit", "$devin_weekly_limit"],
 ]
 
 [ui.sidebar.spaces]
