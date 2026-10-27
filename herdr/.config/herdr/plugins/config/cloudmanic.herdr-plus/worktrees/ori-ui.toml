@@ -1,0 +1,45 @@
+repo = "ori-ui"
+
+[[tabs]]
+name = "Inv"
+
+[[tabs.panes]]
+command = "claude"
+
+[[tabs.panes]]
+command = "nvim ."
+split = "right"
+ratio = 0.6
+
+[[tabs.panes]]
+split = "down"
+ratio = 0.15
+
+[[tabs]]
+name = "Auto"
+
+[[tabs.panes]]
+command = "devin"
+
+[[tabs.panes]]
+command = "lazygit"
+split = "right"
+ratio = 0.5
+
+[[tabs.panes]]
+split = "down"
+ratio = 0.15
+
+[[tabs]]
+name = "Manual"
+
+[[tabs.panes]]
+command = "nvim ."
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.35
+
+[[tabs.panes]]
+split = "down"
+ratio = 0.15

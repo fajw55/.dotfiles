@@ -157,6 +157,21 @@ codex() {
   esac
 }
 
+# --- Claude - add access to vaults ---
+claude() {
+  case "$PWD" in
+    "$HOME/Work/"*)
+      command claude --add-dir "$HOME/Work/oriflame-vault" "$@"
+      ;;
+    "$HOME/Projects/"*)
+      command claude --add-dir "$HOME/Projects/alan-vault" "$@"
+      ;;
+    *)
+      command claude "$@"
+      ;;
+  esac
+}
+
 # --- Backups ---
 alias backup="$HOME/.local/bin/backup.sh"
 

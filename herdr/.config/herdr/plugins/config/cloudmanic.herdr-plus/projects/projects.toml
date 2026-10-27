@@ -1,0 +1,28 @@
+name = "Alan"
+description = "My projects"
+working_dir = "~/Projects"
+
+[[tabs]]
+name = "T1"
+
+[[tabs.panes]]
+command = "ll"
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.4
+
+[[tabs]]
+name = "T2"
+
+[[tabs.panes]]
+command = "ll"
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.4
+
+[[tabs]]
+name = "Docs"
+working_dir = "~/Projects/alan-vault"
+command = "ll"
