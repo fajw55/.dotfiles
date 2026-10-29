@@ -3,18 +3,6 @@ description = "Base stuff"
 working_dir = "~/"
 
 [[tabs]]
-name = "Vault"
-working_dir = "~/Work/oriflame-vault"
-
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-command ="claude"
-split = "right"
-ratio = 0.5
-
-[[tabs]]
 name = "Work"
 working_dir = "~/Work"
 
@@ -36,18 +24,24 @@ split = "right"
 ratio = 0.5
 
 [[tabs]]
-name = "Configs"
-working_dir = "~/.config"
+name = "Vault"
+working_dir = "~/Work/oriflame-vault"
 
 [[tabs.panes]]
+command = "ll"
 
 [[tabs.panes]]
 split = "right"
-ratio = 0.7
+ratio = 0.5
+
+[[tabs]]
+name = "Configs"
 working_dir = "~/.dotfiles"
 
 [[tabs.panes]]
+
+[[tabs.panes]]
 split = "right"
-ratio = 0.57
+ratio = 0.5
 working_dir = "~/.config/herdr/plugins/config/cloudmanic.herdr-plus"
 command = "nvim ."

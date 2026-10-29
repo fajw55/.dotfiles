@@ -3,26 +3,32 @@ description = "My projects"
 working_dir = "~/Projects"
 
 [[tabs]]
-name = "T1"
-
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.4
-
-[[tabs]]
-name = "T2"
-
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.4
-
-[[tabs]]
-name = "Docs"
+name = "Vault"
 working_dir = "~/Projects/alan-vault"
+
+[[tabs.panes]]
 command = "ll"
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.5
+
+[[tabs]]
+name = "P1"
+
+[[tabs.panes]]
+command = "ll"
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.5
+
+[[tabs]]
+name = "P2"
+
+[[tabs.panes]]
+command = "ll"
+
+[[tabs.panes]]
+split = "right"
+ratio = 0.5
