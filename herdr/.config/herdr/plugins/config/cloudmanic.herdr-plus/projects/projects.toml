@@ -6,29 +6,9 @@ working_dir = "~/Projects"
 name = "Vault"
 working_dir = "~/Projects/alan-vault"
 
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
-
 [[tabs]]
 name = "P1"
-
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
 
 [[tabs]]
 name = "P2"
 
-[[tabs.panes]]
-command = "ll"
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5

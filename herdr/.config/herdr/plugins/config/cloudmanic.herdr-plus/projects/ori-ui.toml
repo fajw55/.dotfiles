@@ -3,40 +3,10 @@ description = "Ori-UI"
 working_dir = "~/Work/ori-ui"
 
 [[tabs]]
-name = "Inv"
-
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.6
-
-[[tabs.panes]]
-split = "down"
-ratio = 0.15
+name = "UI1"
+working_dir = "~/Work/ori-ui"
 
 [[tabs]]
-name = "Inv2"
+name = "UI2"
+working_dir = "~/Work/ori-ui"
 
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.6
-
-[[tabs.panes]]
-split = "down"
-ratio = 0.15
-
-[[tabs]]
-name = "Inv3"
-
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
-
-[[tabs.panes]]
-split = "down"
-ratio = 0.15

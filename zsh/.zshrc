@@ -206,3 +206,5 @@ pn test\
 
 alias dsclean='find . -type f -name ".DS_Store" -delete'
 
+alias pulldev='bash ~/Work/scripts/pull-develop.sh'
+

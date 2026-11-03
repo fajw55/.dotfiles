@@ -5,28 +5,9 @@ working_dir = "~/Work"
 [[tabs]]
 name = "W1"
 
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
-
 [[tabs]]
 name = "W2"
 
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
-
 [[tabs]]
-name = "Prototype"
-working_dir = "~/Work/ui-prototype"
-
-[[tabs.panes]]
-
-[[tabs.panes]]
-split = "right"
-ratio = 0.5
+name = "W3"
 
